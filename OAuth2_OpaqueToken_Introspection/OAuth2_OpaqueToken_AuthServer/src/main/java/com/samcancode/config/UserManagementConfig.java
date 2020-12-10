@@ -26,9 +26,15 @@ public class UserManagementConfig extends WebSecurityConfigurerAdapter {
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
-		var udm = new JdbcUserDetailsManager(dataSource); // InMemoryUserDetailsManager();
-//		var u = User.withUsername("bill").password("12345").authorities("read").build();
-//		udm.createUser(u);
+		var udm = new JdbcUserDetailsManager(dataSource); 
+
+		/* IMPORTANT NOTE: The following codes should only be run once to create the users and authorities records per specified below.
+		 * Attempting to recreate them when they already exist in the table will result in start up errors.
+		 * 
+		var u = User.withUsername("bill").password("12345").authorities("read").build();
+		udm.createUser(u);
+		 * 
+		 */
 		
 		return udm;
 	}
