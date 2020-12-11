@@ -61,7 +61,8 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 		clients.jdbc(dataSource) // .inMemory()
 
 		/* IMPORTANT NOTE: The following codes should only be run once to create the oauth_client_details records per specified below.
-		 * Attempting to recreate them when they already exist in the table will result in status 401 Unauthorized.
+		 * Attempting to recreate them when they already exist in the table will result in status 401 Unauthorized. All that is needed
+		 * is to start and stop the application to build the records.
 		 * 
 			// Grant Type = password
 			// User submit username/password to client app which then authenticate with Auth.Server together with its clientId/Secret to get token.
@@ -85,8 +86,10 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 			// Client App send clientid/secret to Auth.Server
 			// Auth.Server return Access Token and Refresh Token to Client App.
 			.withClient("client3").secret("secret3").scopes("read").authorizedGrantTypes("client_credentials")
+			
+			.and().build()
 		
-		*/
+		 */
 		
 		;
 	}
