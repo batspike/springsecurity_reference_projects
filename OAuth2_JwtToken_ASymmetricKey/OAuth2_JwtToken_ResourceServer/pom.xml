@@ -15,7 +15,7 @@
 	<description>Spring Security OAuth2 JwtToken Resource Server</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>14</java.version>
 		<spring-cloud.version>2020.0.0-RC1</spring-cloud.version>
 	</properties>
 
